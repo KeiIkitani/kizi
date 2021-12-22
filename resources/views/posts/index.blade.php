@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
+    {{Auth::user()->name}}
+    @extends('layouts.app')　　　　　　　　　　　　　　　　　　
+    @section('content')
         <h1>Blog Name</h1>
         <p class='create'>[<a href='/posts/create'>create</a>]</p> 
         <div class='posts'>
@@ -25,6 +28,15 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
-        
+        <div>
+        @foreach($questions as $question)
+            <div>
+              <a href="https://teratail.com/questions/{{ $question['id'] }}">
+                {{ $question['title'] }}
+              </a>
+             </div>
+        @endforeach
+        </div>
+    @endsection    
     </body>
 </html>

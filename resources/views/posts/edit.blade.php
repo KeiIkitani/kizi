@@ -10,6 +10,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
+    @extends('layouts.app')　　　　　　　　　　　　　　　　　　
+    @section('content')
+ 　　　　　　　　　　　　　  　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+
         <h1 class="title">編集画面</h1>
     <div class="content">
         <form action="/posts/{{ $post->id }}" method="POST">
@@ -28,5 +32,6 @@
         </form>
         
     </div>
+    @endsection
     </body>
 </html>
